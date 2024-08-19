@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Dice</title>
+    <style>
+        #dice{
+            margin: 50px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 5px;
+            display: grid; 
+            grid-template-columns: repeat(3, 50px);
+        }
+        .dot{
+            background-color: black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        button{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dice">
+        
+    </div>
+
+    <button onclick="roll()">Roll The dice</button>
+
+    <script>
+        dice = document.getElementById('dice')
+        function roll(){
+            randomNumber = Math.ceil(Math.random() * 6)
+
+            dice.innerHTML = '' 
+            for(i = 0; i < randomNumber; i++){
+                dice.innerHTML = dice.innerHTML + '<div class="dot"></div>'
+            }
+        }
+    </script>
+</body>
+</html>

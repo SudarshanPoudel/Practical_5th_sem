@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Student Marks Form</title>
+</head>
+<body>
+    <h2 align="center">Student Marks Form</h2>
+    <form id="marksForm" style="margin: auto; width: max-content;">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+        <label for="rollno">Roll No:</label>
+        <input type="text" id="rollno"><br><br>
+        <label for="course">Course:</label>
+        <select id="course">
+            <option value="CSIT">CSIT</option>
+            <option value="BCA">BCA</option>
+            <option value="BIM">BIM</option>
+            <option value="SE">SE</option>
+        </select><br><br>
+        <label for="subject1">Mathematics:</label>
+        <input type="number" class="marks" min="0" max="100"><br><br>
+        <label for="subject2">Computer Science:</label>
+        <input type="number" class="marks" min="0" max="100"><br><br>
+        <label for="subject3">Physics:</label>
+        <input type="number" class="marks" min="0" max="100"><br><br>
+        <label for="subject4">Chemistry:</label>
+        <input type="number" class="marks" min="0" max="100"><br><br>
+        <label for="subject5">English:</label>
+        <input type="number" class="marks" min="0" max="100"><br><br>
+        <button type="button" onclick="calculateResults()">Calculate</button><br><br>
+        <label for="total">Total Marks:</label>
+        <input type="text" id="total" readonly><br><br>
+        <label for="percentage">Percentage:</label>
+        <input type="text" id="percentage" readonly><br><br>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" readonly><br><br>
+        <label for="result">Result:</label>
+        <input type="text" id="result" readonly><br><br>
+    </form>
+
+    <script>
+        function calculateResults() {
+            const marksElements = document.getElementsByClassName('marks');
+            let total = 0;
+            let pass = true;
+            for (let i = 0; i < marksElements.length; i++) {
+                const marks = parseInt(marksElements[i].value);
+                total += marks;
+                if (marks < 40) {
+                    pass = false;
+                }
+            }
+            const percentage = total / marksElements.length;
+            let grade = '';
+
+            if (percentage >= 90) {
+                grade = 'A';
+            } else if (percentage >= 80) {
+                grade = 'B';
+            } else if (percentage >= 60) {
+                grade = 'C';
+            } else if (percentage >= 40) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+            const result = pass ? 'Pass' : 'Fail';
+            document.getElementById('total').value = total;
+            document.getElementById('percentage').value = percentage.toFixed(2);
+            document.getElementById('grade').value = grade;
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>

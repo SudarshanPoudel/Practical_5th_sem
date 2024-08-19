@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button{
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="login" method="post">
+        <input type="text" id="email" name="email" placeholder="Email" required> <br><br>
+        <input type="password" id="password" name="password" placeholder="Password" required> <br><br>
+        <button type="submit" onclick="validateForm(event)">Login</button>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault()
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordRegex = /^(?=.*[0-9]).{8,}$/;
+            if (!emailRegex.test(email)) {
+                window.alert('Invalid email address.');
+            } else if (!passwordRegex.test(password)) {
+                window.alert('Password must be at least 8 characters long with at least one number and one character.');
+            } else {
+                window.alert('Login successful')
+            }
+        }
+    </script>
+</body>
+</html>

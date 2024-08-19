@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Navbar</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #aaa;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+        }
+
+        .logo a img {
+            max-height: 30px; 
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .content{
+            text-align: center;
+            padding-top: 500px;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">Text here</div>
+</body>
+</html>
+</html>
