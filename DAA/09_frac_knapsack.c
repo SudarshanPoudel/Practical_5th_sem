@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 
-void swap(double* a, double* b) {
-    double temp = *a;
+void swap(int* a, int* b) {
+    int temp = *a;
     *a = *b;
     *b = temp;
 }
@@ -43,13 +43,13 @@ double fractionalKnapsack(int W, int value[], int weight[], int n) {
 
 int main() {
     int W = 50;  
-    int value[] = {60, 100, 120};
-    int weight[] = {10, 20, 30};
+    int value[] = {50, 110, 120};
+    int weight[] = {20, 10, 30};
     int n = sizeof(value) / sizeof(value[0]);
 
     double maxValue = fractionalKnapsack(W, value, weight, n);
 
     printf("Maximum value in Knapsack = %.2lf\n", maxValue);
-
+    printf("\n\n\n");
     return 0;
 }

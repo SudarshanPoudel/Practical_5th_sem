@@ -18,14 +18,14 @@ int knapsack(int W, int w[], int v[], int n) {
 }
 
 int main() {
-    int v[] = {60, 100, 120};
-    int w[] = {10, 20, 30};
+    int v[] = {50, 110, 120};
+    int w[] = {20, 10, 30};
     int W = 50;  
     int n = sizeof(v) / sizeof(v[0]);
 
     int maxValue = knapsack(W, w, v, n);
 
-    printf("Maximum v in Knapsack = %d\n", maxValue);
+    printf("Maximum v in Knapsack = %d\n\n\n", maxValue);
 
     return 0;
 }

@@ -1,15 +1,27 @@
+<!-- Practical 7-->
+ <!-- Creating simple dice game using HTMl, CSS and JS -->
+
 <html>
 <head>
     <title>Dice</title>
     <style>
         #dice{
-            margin: 50px;
+            margin: 10px 50px;
             width: 150px;
             height: 150px;
             border: 2px solid black;
             border-radius: 5px;
-            display: grid; 
-            grid-template-columns: repeat(3, 50px);
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .cont{
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 33%;
         }
         .dot{
             background-color: black;
@@ -19,14 +31,14 @@
             margin: auto;
         }
 
-        button{
+        button, h1{
             margin: 50px;
         }
     </style>
 </head>
 <body>
+    <h1>Dice Game</h1>
     <div id="dice">
-        
     </div>
 
     <button onclick="roll()">Roll The dice</button>
@@ -38,7 +50,7 @@
 
             dice.innerHTML = '' 
             for(i = 0; i < randomNumber; i++){
-                dice.innerHTML = dice.innerHTML + '<div class="dot"></div>'
+                dice.innerHTML = dice.innerHTML + '<div class = "cont"><div class="dot"></div></div>'
             }
         }
     </script>

@@ -20,7 +20,7 @@ float ksTest(float data[], int n) {
     for (int i = 0; i < n; i++) {
         float F_empirical = (i + 1) / (float)n;
         float F_theoretical = data[i];
-        float diff = fabs(F_empirical - F_theoretical);
+        float diff = abs(F_empirical - F_theoretical);
         if (diff > D) D = diff;
     }
     return D;
@@ -46,7 +46,7 @@ int main() {
     if (D > D_critical) {
         printf("Reject the null hypothesis (the data does not follow a uniform distribution).\n\n\n");
     } else {
-        printf("Fail to reject the null hypothesis (the data follows a uniform distribution).\n\n\n");
+        printf("Fail to reject the null hypothesis \n(the data follows a uniform distribution).\n\n\n");
     }
     return 0;
 }

@@ -46,5 +46,5 @@ int main(){
     scanf("%d %d", &seed, &iter);
     digit = noOfdigits(seed);
     midSqureMethod(seed, digit, iter);
-
+    printf("\n\n\n");
 }

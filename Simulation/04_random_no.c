@@ -15,7 +15,7 @@ int main(){
         result[i] = (float)x[i]/modulo;
     }
 
-    printf("Generated random numbers are : ");
+    printf("Generated random numbers are : \n");
     for(i = 0; i < n; i++){
         printf(" %.3f", result[i]);
     }

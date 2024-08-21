@@ -6,14 +6,14 @@ int board[20], count;
 void print(int n) {
     int i, j;
     
-    printf("Solution %d:\n\n", ++count);
+    printf("Solution %d:\n", ++count);
     
     for (i = 1; i <= n; ++i) {
         printf("\t%d", i);
     }
 
     for (i = 1; i <= n; ++i) {
-        printf("\n\n%d", i);
+        printf("\n%d", i);
         for (j = 1; j <= n; ++j) {
             if (board[i] == j)
                 printf("\tQ");
@@ -21,7 +21,7 @@ void print(int n) {
                 printf("\t-");
         }
     }
-    printf("\n\n");
+    printf("\n");
 }
 
 int place(int row, int column) {
@@ -58,6 +58,6 @@ int main() {
     scanf("%d", &n);
 
     queen(1, n);
-    
+    printf("\n\n\n");
     return 0;
 }

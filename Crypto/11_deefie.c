@@ -19,8 +19,8 @@ int main(){
     scanf("%d", &y);
     b = power(g, y, n);
 
-    printf("Key for person A is %lld\n", power(b, x, n));
-    printf("Key for person B is %lld\n\n\n", power(a, y, n));
+    printf("Key for person A is %lld\n", b);
+    printf("Key for person B is %lld\n\n\n", a);
 
     return 0;
 }
