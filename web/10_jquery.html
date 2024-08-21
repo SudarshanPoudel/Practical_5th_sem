@@ -1,0 +1,37 @@
+<!-- Practical 10 -->
+ <!-- Creating simple animation with jQuery -->
+<html lang="en">
+<head>
+    <title>jQuery Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        button {
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="animateBtn">Animate</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#animateBtn").click(function(){
+                $("#box").animate({
+                    left: '+=250px',   
+                    width: '150px',  
+                    height: '150px'    
+                }, 1000); 
+            });
+        });
+    </script>
+</body>
+</html>

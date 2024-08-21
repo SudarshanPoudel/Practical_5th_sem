@@ -1,0 +1,51 @@
+<!-- Practical 9 -->
+ <!-- Simple JS Code demonstrating cookies -->
+
+<html>
+<head>
+    <title>Cookie Demo</title>
+</head>
+<body>
+    <h2>Cookie Demo</h2>
+    <label for="cookieName">Cookie Name:</label>
+    <input type="text" id="cookieName"><br><br>
+
+    <label for="cookieValue">Cookie Value:</label>
+    <input type="text" id="cookieValue"><br><br>
+
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="getCookie()">Get Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button><br><br>
+
+    <p id="output"></p>
+
+    <script>
+        function setCookie() {
+            const name = document.getElementById("cookieName").value;
+            const value = document.getElementById("cookieValue").value;
+            const days = 7; 
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/";
+            document.getElementById("output").innerText = `Cookie "${name}" set with value "${value}".`;
+        }
+
+        function getCookie() {
+            const name = document.getElementById("cookieName").value + "=";
+            const cookies = document.cookie.split('; ');
+            for (let cookie of cookies) {
+                if (cookie.startsWith(name)) {
+                    document.getElementById("output").innerText = `Cookie Value: "${decodeURIComponent(cookie.split('=')[1])}"`;
+                    return;
+                }
+            }
+            document.getElementById("output").innerText = "Cookie not found.";
+        }
+
+        function deleteCookie() {
+            const name = document.getElementById("cookieName").value;
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.getElementById("output").innerText = `Cookie "${name}" deleted.`;
+        }
+    </script>
+</body>
+</html>

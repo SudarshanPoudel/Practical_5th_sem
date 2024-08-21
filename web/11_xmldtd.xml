@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+    <!ELEMENT students (student+)>
+    <!ELEMENT student (name, age, major)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+    <!ELEMENT major (#PCDATA)>
+    <!ATTLIST student id ID #REQUIRED>
+]>
+<students>
+    <student id="s1">
+        <name>John Doe</name>
+        <age>21</age>
+        <major>Computer Science</major>
+    </student>
+    <student id="s2">
+        <name>Jane Smith</name>
+        <age>22</age>
+        <major>Mathematics</major>
+    </student>
+</students>
+
+<!-- Practical 11 -->
+<!-- Creating an XML document with internal  DTD -->
